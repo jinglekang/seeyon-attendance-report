@@ -20,6 +20,9 @@ import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.List;
 
+/**
+ * servlet入口
+ */
 public class Report extends HttpServlet {
 
     private List<ReportModel> modelList;
