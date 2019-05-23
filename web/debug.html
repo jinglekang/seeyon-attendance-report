@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>上海圣思--考勤报表转换</title>
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+    <style>
+        #box {
+            margin: 20px auto;
+            width: 800px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="head">
+        <h1>考勤报表转换</h1>
+        <h2>请上传标准OA导出的没有经过二次转换的模板</h2>
+    </div>
+    <div id="content">
+        <form action="upload" enctype="multipart/form-data" method="post">
+            <input type="file" name="file">
+            <button type="submit">点击上传</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
