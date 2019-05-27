@@ -5,6 +5,9 @@ import com.alibaba.excel.metadata.BaseRowModel;
 
 import java.util.Date;
 
+/**
+ * @author JING
+ */
 public class ReadModel extends BaseRowModel {
 
     @ExcelProperty(index = 0)

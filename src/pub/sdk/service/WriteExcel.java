@@ -10,6 +10,9 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.List;
 
+/**
+ * @author JING
+ */
 public class WriteExcel {
     public void write2007Excel(List<ReportModel> modelList, OutputStream os) throws IOException {
         ExcelWriter writer = EasyExcelFactory.getWriter(os);

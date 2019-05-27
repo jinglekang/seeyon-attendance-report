@@ -6,6 +6,9 @@ import pub.sdk.model.ReportModel;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+/**
+ * @author JING
+ */
 public class ExcelUtils {
 
     public static List<ReportModel> analysis(List<Object> list) {

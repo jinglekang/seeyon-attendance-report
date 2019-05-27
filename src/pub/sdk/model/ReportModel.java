@@ -3,6 +3,9 @@ package pub.sdk.model;
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.alibaba.excel.metadata.BaseRowModel;
 
+/**
+ * @author JING
+ */
 public class ReportModel extends BaseRowModel {
 
     @ExcelProperty(value = {"姓名", "姓名"}, index = 0)

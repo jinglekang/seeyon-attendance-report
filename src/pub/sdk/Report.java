@@ -22,6 +22,8 @@ import java.util.List;
 
 /**
  * servlet入口
+ *
+ * @author JING
  */
 public class Report extends HttpServlet {
 
@@ -62,11 +64,14 @@ public class Report extends HttpServlet {
             try {
                 // 解析出FileItem对象
                 List<FileItem> items = sfu.parseRequest(req);
-                for (FileItem item : items) { // 遍历
-                    if (!item.isFormField()) { // 判读是file类型还是text类型
+                // 遍历
+                for (FileItem item : items) {
+                    // 判读是file类型还是text类型
+                    if (!item.isFormField()) {
                         // 创建输入流，不过此流必须是BufferedInputStream
                         InputStream inputStream = new BufferedInputStream(item.getInputStream());
-                        ReadExcel re = new ReadExcel(); // 实例化读取工具类
+                        // 实例化读取工具类
+                        ReadExcel re = new ReadExcel();
 
                         // 文件为2003版本，使用Model解析
                         List<Object> list = re.read2003ExcelWithModel(inputStream);
