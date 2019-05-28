@@ -7,7 +7,7 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import pub.sdk.model.ReportModel;
-import pub.sdk.service.ExcelUtils;
+import pub.sdk.service.ExcelParse;
 import pub.sdk.service.ReadExcel;
 import pub.sdk.service.WriteExcel;
 
@@ -53,6 +53,7 @@ public class Report extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
         resp.setCharacterEncoding("utf-8");
         resp.setContentType("application/json; charset=utf-8");
         // 判断是否是表单文件类
@@ -75,17 +76,13 @@ public class Report extends HttpServlet {
 
                         // 文件为2003版本，使用Model解析
                         List<Object> list = re.read2003ExcelWithModel(inputStream);
-
                         // 交给service层解析
-                        this.modelList = ExcelUtils.analysis(list);
-
+                        this.modelList = ExcelParse.parse(list);
                         for (ReportModel reportModel : this.modelList) {
                             System.out.println(reportModel);
                         }
-
                         // 打印给前端页面
                         PrintWriter pw = resp.getWriter();
-
                         JSONObject json = new JSONObject();
                         json.put("code", "1");
                         json.put("msg", "OK");
@@ -100,6 +97,5 @@ public class Report extends HttpServlet {
         } else {
             System.out.println("not 'multipart/form-data'");
         }
-
     }
 }

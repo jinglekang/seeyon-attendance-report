@@ -8,6 +8,7 @@ import java.util.Date;
 /**
  * @author JING
  */
+@SuppressWarnings("unused")
 public class ReadModel extends BaseRowModel {
 
     @ExcelProperty(index = 0)

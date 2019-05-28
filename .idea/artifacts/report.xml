@@ -1,0 +1,42 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="report">
+    <output-path>$PROJECT_DIR$/out/artifacts/report</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Report" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/el-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/jasper.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/jsp-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/catalina.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/ecj-4.6.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/jasper-el.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/jaspic-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/tomcat-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/tomcat-jni.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/catalina-ha.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/servlet-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/tomcat-dbcp.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/tomcat-jdbc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/tomcat-util.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/catalina-ant.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/tomcat-coyote.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/websocket-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/tomcat-i18n-es.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/tomcat-i18n-fr.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/tomcat-i18n-ja.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/tomcat-i18n-ru.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/annotations-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/catalina-tribes.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/tomcat-util-scan.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/tomcat-websocket.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Tomcat/lib/catalina-storeconfig.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Report/web/Web" />
+    </root>
+  </artifact>
+</component>

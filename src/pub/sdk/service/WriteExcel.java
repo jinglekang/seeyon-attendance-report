@@ -5,6 +5,7 @@ import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.metadata.Sheet;
 import com.alibaba.excel.support.ExcelTypeEnum;
 import pub.sdk.model.ReportModel;
+import pub.sdk.util.ReportUtils;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -13,6 +14,7 @@ import java.util.List;
 /**
  * @author JING
  */
+@SuppressWarnings("unused")
 public class WriteExcel {
     public void write2007Excel(List<ReportModel> modelList, OutputStream os) throws IOException {
         ExcelWriter writer = EasyExcelFactory.getWriter(os);
@@ -21,7 +23,7 @@ public class WriteExcel {
         sheet.setSheetName("sheet");
         //or 设置自适应宽度
         sheet.setAutoWidth(Boolean.TRUE);
-        writer.write1(ExcelUtils.transform(modelList), sheet);
+        writer.write1(ReportUtils.transform(modelList), sheet);
         writer.finish();
         os.close();
     }
@@ -33,7 +35,7 @@ public class WriteExcel {
         sheet.setSheetName("sheet");
         //or 设置自适应宽度
         sheet.setAutoWidth(Boolean.TRUE);
-        writer.write1(ExcelUtils.transform(modelList), sheet);
+        writer.write1(ReportUtils.transform(modelList), sheet);
         writer.finish();
         os.close();
     }
