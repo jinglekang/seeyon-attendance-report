@@ -6,7 +6,8 @@ import com.alibaba.excel.metadata.BaseRowModel;
 /**
  * @author JING
  */
-public class ReportModel extends BaseRowModel {
+@SuppressWarnings("unused")
+public class WriteModel extends BaseRowModel {
 
     @ExcelProperty(value = {"姓名", "姓名"}, index = 0)
     private String name;
@@ -14,49 +15,49 @@ public class ReportModel extends BaseRowModel {
     private String depart;
 
     @ExcelProperty(value = {"1", "上午"}, index = 2)
-    private String am1;
+    private String am01;
     @ExcelProperty(value = {"1", "下午"}, index = 3)
-    private String pm1;
+    private String pm01;
 
     @ExcelProperty(value = {"2", "上午"}, index = 4)
-    private String am2;
+    private String am02;
     @ExcelProperty(value = {"2", "下午"}, index = 5)
-    private String pm2;
+    private String pm02;
 
     @ExcelProperty(value = {"3", "上午"}, index = 6)
-    private String am3;
+    private String am03;
     @ExcelProperty(value = {"3", "下午"}, index = 7)
-    private String pm3;
+    private String pm03;
 
     @ExcelProperty(value = {"4", "上午"}, index = 8)
-    private String am4;
+    private String am04;
     @ExcelProperty(value = {"4", "下午"}, index = 9)
-    private String pm4;
+    private String pm04;
 
     @ExcelProperty(value = {"5", "上午"}, index = 10)
-    private String am5;
+    private String am05;
     @ExcelProperty(value = {"5", "下午"}, index = 11)
-    private String pm5;
+    private String pm05;
 
     @ExcelProperty(value = {"6", "上午"}, index = 12)
-    private String am6;
+    private String am06;
     @ExcelProperty(value = {"6", "下午"}, index = 13)
-    private String pm6;
+    private String pm06;
 
     @ExcelProperty(value = {"7", "上午"}, index = 14)
-    private String am7;
+    private String am07;
     @ExcelProperty(value = {"7", "下午"}, index = 15)
-    private String pm7;
+    private String pm07;
 
     @ExcelProperty(value = {"8", "上午"}, index = 16)
-    private String am8;
+    private String am08;
     @ExcelProperty(value = {"8", "下午"}, index = 17)
-    private String pm8;
+    private String pm08;
 
     @ExcelProperty(value = {"9", "上午"}, index = 18)
-    private String am9;
+    private String am09;
     @ExcelProperty(value = {"9", "下午"}, index = 19)
-    private String pm9;
+    private String pm09;
 
     @ExcelProperty(value = {"10", "上午"}, index = 20)
     private String am10;
@@ -184,148 +185,148 @@ public class ReportModel extends BaseRowModel {
         this.depart = depart;
     }
 
-    public String getAm1() {
-        return am1;
+    public String getAm01() {
+        return am01;
     }
 
-    public void setAm1(String am1) {
-        this.am1 = am1;
+    public void setAm01(String am01) {
+        this.am01 = am01;
     }
 
-    public String getPm1() {
-        return pm1;
+    public String getPm01() {
+        return pm01;
     }
 
-    public void setPm1(String pm1) {
-        this.pm1 = pm1;
+    public void setPm01(String pm01) {
+        this.pm01 = pm01;
     }
 
-    public String getAm2() {
-        return am2;
+    public String getAm02() {
+        return am02;
     }
 
-    public void setAm2(String am2) {
-        this.am2 = am2;
+    public void setAm02(String am02) {
+        this.am02 = am02;
     }
 
-    public String getPm2() {
-        return pm2;
+    public String getPm02() {
+        return pm02;
     }
 
-    public void setPm2(String pm2) {
-        this.pm2 = pm2;
+    public void setPm02(String pm02) {
+        this.pm02 = pm02;
     }
 
-    public String getAm3() {
-        return am3;
+    public String getAm03() {
+        return am03;
     }
 
-    public void setAm3(String am3) {
-        this.am3 = am3;
+    public void setAm03(String am03) {
+        this.am03 = am03;
     }
 
-    public String getPm3() {
-        return pm3;
+    public String getPm03() {
+        return pm03;
     }
 
-    public void setPm3(String pm3) {
-        this.pm3 = pm3;
+    public void setPm03(String pm03) {
+        this.pm03 = pm03;
     }
 
-    public String getAm4() {
-        return am4;
+    public String getAm04() {
+        return am04;
     }
 
-    public void setAm4(String am4) {
-        this.am4 = am4;
+    public void setAm04(String am04) {
+        this.am04 = am04;
     }
 
-    public String getPm4() {
-        return pm4;
+    public String getPm04() {
+        return pm04;
     }
 
-    public void setPm4(String pm4) {
-        this.pm4 = pm4;
+    public void setPm04(String pm04) {
+        this.pm04 = pm04;
     }
 
-    public String getAm5() {
-        return am5;
+    public String getAm05() {
+        return am05;
     }
 
-    public void setAm5(String am5) {
-        this.am5 = am5;
+    public void setAm05(String am05) {
+        this.am05 = am05;
     }
 
-    public String getPm5() {
-        return pm5;
+    public String getPm05() {
+        return pm05;
     }
 
-    public void setPm5(String pm5) {
-        this.pm5 = pm5;
+    public void setPm05(String pm05) {
+        this.pm05 = pm05;
     }
 
-    public String getAm6() {
-        return am6;
+    public String getAm06() {
+        return am06;
     }
 
-    public void setAm6(String am6) {
-        this.am6 = am6;
+    public void setAm06(String am06) {
+        this.am06 = am06;
     }
 
-    public String getPm6() {
-        return pm6;
+    public String getPm06() {
+        return pm06;
     }
 
-    public void setPm6(String pm6) {
-        this.pm6 = pm6;
+    public void setPm06(String pm06) {
+        this.pm06 = pm06;
     }
 
-    public String getAm7() {
-        return am7;
+    public String getAm07() {
+        return am07;
     }
 
-    public void setAm7(String am7) {
-        this.am7 = am7;
+    public void setAm07(String am07) {
+        this.am07 = am07;
     }
 
-    public String getPm7() {
-        return pm7;
+    public String getPm07() {
+        return pm07;
     }
 
-    public void setPm7(String pm7) {
-        this.pm7 = pm7;
+    public void setPm07(String pm07) {
+        this.pm07 = pm07;
     }
 
-    public String getAm8() {
-        return am8;
+    public String getAm08() {
+        return am08;
     }
 
-    public void setAm8(String am8) {
-        this.am8 = am8;
+    public void setAm08(String am08) {
+        this.am08 = am08;
     }
 
-    public String getPm8() {
-        return pm8;
+    public String getPm08() {
+        return pm08;
     }
 
-    public void setPm8(String pm8) {
-        this.pm8 = pm8;
+    public void setPm08(String pm08) {
+        this.pm08 = pm08;
     }
 
-    public String getAm9() {
-        return am9;
+    public String getAm09() {
+        return am09;
     }
 
-    public void setAm9(String am9) {
-        this.am9 = am9;
+    public void setAm09(String am09) {
+        this.am09 = am09;
     }
 
-    public String getPm9() {
-        return pm9;
+    public String getPm09() {
+        return pm09;
     }
 
-    public void setPm9(String pm9) {
-        this.pm9 = pm9;
+    public void setPm09(String pm09) {
+        this.pm09 = pm09;
     }
 
     public String getAm10() {
@@ -682,27 +683,27 @@ public class ReportModel extends BaseRowModel {
 
     @Override
     public String toString() {
-        return "ReportModel{" +
+        return "WriteModel{" +
                 "name='" + name + '\'' +
                 ", depart='" + depart + '\'' +
-                ", am1='" + am1 + '\'' +
-                ", pm1='" + pm1 + '\'' +
-                ", am2='" + am2 + '\'' +
-                ", pm2='" + pm2 + '\'' +
-                ", am3='" + am3 + '\'' +
-                ", pm3='" + pm3 + '\'' +
-                ", am4='" + am4 + '\'' +
-                ", pm4='" + pm4 + '\'' +
-                ", am5='" + am5 + '\'' +
-                ", pm5='" + pm5 + '\'' +
-                ", am6='" + am6 + '\'' +
-                ", pm6='" + pm6 + '\'' +
-                ", am7='" + am7 + '\'' +
-                ", pm7='" + pm7 + '\'' +
-                ", am8='" + am8 + '\'' +
-                ", pm8='" + pm8 + '\'' +
-                ", am9='" + am9 + '\'' +
-                ", pm9='" + pm9 + '\'' +
+                ", am01='" + am01 + '\'' +
+                ", pm01='" + pm01 + '\'' +
+                ", am02='" + am02 + '\'' +
+                ", pm02='" + pm02 + '\'' +
+                ", am03='" + am03 + '\'' +
+                ", pm03='" + pm03 + '\'' +
+                ", am04='" + am04 + '\'' +
+                ", pm04='" + pm04 + '\'' +
+                ", am05='" + am05 + '\'' +
+                ", pm05='" + pm05 + '\'' +
+                ", am06='" + am06 + '\'' +
+                ", pm06='" + pm06 + '\'' +
+                ", am07='" + am07 + '\'' +
+                ", pm07='" + pm07 + '\'' +
+                ", am08='" + am08 + '\'' +
+                ", pm08='" + pm08 + '\'' +
+                ", am09='" + am09 + '\'' +
+                ", pm09='" + pm09 + '\'' +
                 ", am10='" + am10 + '\'' +
                 ", pm10='" + pm10 + '\'' +
                 ", am11='" + am11 + '\'' +

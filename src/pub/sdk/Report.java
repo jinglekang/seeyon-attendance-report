@@ -1,15 +1,16 @@
 package pub.sdk;
 
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import pub.sdk.model.ReportModel;
 import pub.sdk.service.ExcelParse;
 import pub.sdk.service.ReadExcel;
 import pub.sdk.service.WriteExcel;
+import pub.sdk.util.ReportUtils;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +20,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.Map;
 
 /**
  * servlet入口
@@ -27,7 +29,7 @@ import java.util.List;
  */
 public class Report extends HttpServlet {
 
-    private List<ReportModel> modelList;
+    private List<Map<String, Object>> modelList;
 
     /**
      * 下载考勤报表的接口
@@ -41,7 +43,7 @@ public class Report extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         resp.setContentType("application/json; charset=utf-8");
         WriteExcel we = new WriteExcel();
-        we.write2003Excel(modelList, resp.getOutputStream());
+        we.write2003Excel(ReportUtils.transform(modelList), resp.getOutputStream());
     }
 
     /**
@@ -78,15 +80,17 @@ public class Report extends HttpServlet {
                         List<Object> list = re.read2003ExcelWithModel(inputStream);
                         // 交给service层解析
                         this.modelList = ExcelParse.parse(list);
-                        for (ReportModel reportModel : this.modelList) {
-                            System.out.println(reportModel);
+                        JSONArray array = new JSONArray();
+                        for (Map<String, Object> writeModel : this.modelList) {
+                            JSONObject json = new JSONObject(writeModel);
+                            array.add(json);
                         }
                         // 打印给前端页面
                         PrintWriter pw = resp.getWriter();
                         JSONObject json = new JSONObject();
                         json.put("code", "1");
                         json.put("msg", "OK");
-                        json.put("data", this.modelList);
+                        json.put("data", array);
                         pw.write(json.toJSONString());
                         pw.close();
                     }
