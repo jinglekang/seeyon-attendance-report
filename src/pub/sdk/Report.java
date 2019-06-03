@@ -34,9 +34,9 @@ public class Report extends HttpServlet {
     /**
      * 下载考勤报表的接口
      *
-     * @param req  request
-     * @param resp response
-     * @throws IOException IO
+     * @param req  HttpServletRequest
+     * @param resp HttpServletResponse
+     * @throws IOException IOException
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
