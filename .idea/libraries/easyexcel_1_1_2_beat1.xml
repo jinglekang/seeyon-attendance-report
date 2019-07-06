@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="easyexcel-1.1.2-beat1">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/easyexcel-1.1.2-beat1.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

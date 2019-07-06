@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>上海圣思--考勤报表转换</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+    <style>
+        #box {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <form class="layui-form" action="upload" enctype="multipart/form-data" method="post">
+        <h1>考勤报表转换</h1>
+        <button type="button" class="layui-btn" id="button">
+            <i class="layui-icon layui-icon-upload-circle"></i>上传签到数据
+        </button>
+        <button type="button" class="layui-btn layui-btn-disabled" id="download" disabled="disabled">
+            <i class="layui-icon layui-icon-download-circle"></i>下载考勤报表
+        </button>
+    </form>
+</div>
+<table class="layui-hide" id="report"></table>
+<script src="layui/layui.js"></script>
+<script>
+    var download = document.getElementById("download");
+    download.onclick = function () {
+        var aElement = document.createElement("a");
+        aElement.download = "考勤报表.xls";
+        aElement.href = 'upload';
+        aElement.click();
+    };
+
+    layui.use('upload', function () {
+        var upload = layui.upload;
+
+        //执行实例
+        upload.render({
+            elem: '#button',
+            url: 'upload',
+            accept: 'file',
+            acceptMime: 'application/vnd.ms-excel',
+            exts: 'xls',
+            before: function () {
+                layer.closeAll();
+                layer.load(); //上传loading
+            },
+            done: function (res) {
+                if (res.code === '1') {
+                    layer.closeAll('loading'); //关闭loading
+                    layui.use('table', function () {
+                        var table = layui.table;
+                        table.render({
+                            elem: '#report',
+                            // toolbar: true,
+                            // defaultToolbar: ['exports', 'print'],
+                            data: res.data,
+                            title: '考勤定义表',
+                            cellMinWidth: 150,
+                            page: false,
+                            height: 'full-100',
+                            limit: 100,
+                            cols: [[
+                                {colspan: '2', align: 'center'},
+                                {colspan: '2', align: 'center', title: '1'},
+                                {colspan: '2', align: 'center', title: '2'},
+                                {colspan: '2', align: 'center', title: '3'},
+                                {colspan: '2', align: 'center', title: '4'},
+                                {colspan: '2', align: 'center', title: '5'},
+                                {colspan: '2', align: 'center', title: '6'},
+                                {colspan: '2', align: 'center', title: '7'},
+                                {colspan: '2', align: 'center', title: '8'},
+                                {colspan: '2', align: 'center', title: '9'},
+                                {colspan: '2', align: 'center', title: '10'},
+                                {colspan: '2', align: 'center', title: '11'},
+                                {colspan: '2', align: 'center', title: '12'},
+                                {colspan: '2', align: 'center', title: '13'},
+                                {colspan: '2', align: 'center', title: '14'},
+                                {colspan: '2', align: 'center', title: '15'},
+                                {colspan: '2', align: 'center', title: '16'},
+                                {colspan: '2', align: 'center', title: '16'},
+                                {colspan: '2', align: 'center', title: '18'},
+                                {colspan: '2', align: 'center', title: '19'},
+                                {colspan: '2', align: 'center', title: '20'},
+                                {colspan: '2', align: 'center', title: '21'},
+                                {colspan: '2', align: 'center', title: '22'},
+                                {colspan: '2', align: 'center', title: '23'},
+                                {colspan: '2', align: 'center', title: '24'},
+                                {colspan: '2', align: 'center', title: '25'},
+                                {colspan: '2', align: 'center', title: '26'},
+                                {colspan: '2', align: 'center', title: '27'},
+                                {colspan: '2', align: 'center', title: '28'},
+                                {colspan: '2', align: 'center', title: '29'},
+                                {colspan: '2', align: 'center', title: '30'},
+                                {colspan: '2', align: 'center', title: '31'}
+                            ], [
+                                {field: 'name', title: '姓名', align: 'center', sort: true, fixed: 'left'},
+                                {field: 'depart', title: '部门', align: 'center', sort: true, fixed: 'left'},
+                                {field: 'am01', align: 'center', title: '上午'},
+                                {field: 'pm01', align: 'center', title: '下午'},
+                                {field: 'am02', align: 'center', title: '上午'},
+                                {field: 'pm02', align: 'center', title: '下午'},
+                                {field: 'am03', align: 'center', title: '上午'},
+                                {field: 'pm03', align: 'center', title: '下午'},
+                                {field: 'am04', align: 'center', title: '上午'},
+                                {field: 'pm04', align: 'center', title: '下午'},
+                                {field: 'am05', align: 'center', title: '上午'},
+                                {field: 'pm05', align: 'center', title: '下午'},
+                                {field: 'am06', align: 'center', title: '上午'},
+                                {field: 'pm06', align: 'center', title: '下午'},
+                                {field: 'am07', align: 'center', title: '上午'},
+                                {field: 'pm07', align: 'center', title: '下午'},
+                                {field: 'am08', align: 'center', title: '上午'},
+                                {field: 'pm08', align: 'center', title: '下午'},
+                                {field: 'am09', align: 'center', title: '上午'},
+                                {field: 'pm09', align: 'center', title: '下午'},
+                                {field: 'am10', align: 'center', title: '上午'},
+                                {field: 'pm10', align: 'center', title: '下午'},
+                                {field: 'am11', align: 'center', title: '上午'},
+                                {field: 'pm11', align: 'center', title: '下午'},
+                                {field: 'am12', align: 'center', title: '上午'},
+                                {field: 'pm12', align: 'center', title: '下午'},
+                                {field: 'am13', align: 'center', title: '上午'},
+                                {field: 'pm13', align: 'center', title: '下午'},
+                                {field: 'am14', align: 'center', title: '上午'},
+                                {field: 'pm14', align: 'center', title: '下午'},
+                                {field: 'am15', align: 'center', title: '上午'},
+                                {field: 'pm15', align: 'center', title: '下午'},
+                                {field: 'am16', align: 'center', title: '上午'},
+                                {field: 'pm16', align: 'center', title: '下午'},
+                                {field: 'am17', align: 'center', title: '上午'},
+                                {field: 'pm17', align: 'center', title: '下午'},
+                                {field: 'am18', align: 'center', title: '上午'},
+                                {field: 'pm18', align: 'center', title: '下午'},
+                                {field: 'am19', align: 'center', title: '上午'},
+                                {field: 'pm19', align: 'center', title: '下午'},
+                                {field: 'am20', align: 'center', title: '上午'},
+                                {field: 'pm20', align: 'center', title: '下午'},
+                                {field: 'am21', align: 'center', title: '上午'},
+                                {field: 'pm21', align: 'center', title: '下午'},
+                                {field: 'am22', align: 'center', title: '上午'},
+                                {field: 'pm22', align: 'center', title: '下午'},
+                                {field: 'am23', align: 'center', title: '上午'},
+                                {field: 'pm23', align: 'center', title: '下午'},
+                                {field: 'am24', align: 'center', title: '上午'},
+                                {field: 'pm24', align: 'center', title: '下午'},
+                                {field: 'am25', align: 'center', title: '上午'},
+                                {field: 'pm25', align: 'center', title: '下午'},
+                                {field: 'am26', align: 'center', title: '上午'},
+                                {field: 'pm26', align: 'center', title: '下午'},
+                                {field: 'am27', align: 'center', title: '上午'},
+                                {field: 'pm27', align: 'center', title: '下午'},
+                                {field: 'am28', align: 'center', title: '上午'},
+                                {field: 'pm28', align: 'center', title: '下午'},
+                                {field: 'am29', align: 'center', title: '上午'},
+                                {field: 'pm29', align: 'center', title: '下午'},
+                                {field: 'am30', align: 'center', title: '上午'},
+                                {field: 'pm30', align: 'center', title: '下午'},
+                                {field: 'am31', align: 'center', title: '上午'},
+                                {field: 'pm31', align: 'center', title: '下午'}
+                            ]]
+                        });
+                    });
+                    download.className = 'layui-btn';
+                    download.disabled = "";
+                } else {
+                    layer.msg('上传失败');
+                }
+            },
+            error: function () {
+                layer.closeAll('loading'); //关闭loading
+            }
+        });
+    });
+</script>
+</body>
+</html>
